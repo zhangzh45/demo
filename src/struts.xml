@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="login" extends="struts-default">
+	    <action name="checkIn" class="com.action.LoginAction" method="Identity">
+			<result name="success">/WEB-INF/main.jsp</result>
+			<result name="input">/WEB-INF/error.jsp</result>
+	    </action>
+	    <action name="logout" class="com.action.LoginAction" method="loginout">
+     	<result name="input">MyJsp.jsp</result>
+        </action>
+	    <action name="findClient" class="EmployeeAction" >
+		<result name="input">/WEB-INF/AddPeo.jsp</result>
+	</action>
+	<action name="addclient" class="EmployeeAction" method="addClient">
+		<result name="success">/WEB-INF/main.jsp</result>
+		<result name="error">/WEB-INF/AddPeo.jsp</result>
+	</action>
+	    <action name="UpdateClient" class="EmployeeAction" method="updateClient">
+			<result name="success">/WEB-INF/main.jsp</result>
+			<result name="error">/WEB-INF/error.jsp</result>
+			<result name="input">/WEB-INF//EditEmployee.jsp</result>
+	</action>
+    </package>
+    
+    <package name="ajaxCheck"  extends="json-default">
+    
+    <action name="getOrgTree" class="OrganizationAction" method="doGetOrgTree">
+		<!-- 	<result name="success">/WEB-INF/main.jsp</result>
+			<result name="input">/WEB-INF/error.jsp</result> -->
+			<result type="json" >
+				<param name="root">treeJson</param>
+			</result>
+		</action>
+		<action name="showemployees" class="EmployeeAction" method="getEmpfromorg">
+	    <result type="json" >
+				<param name="root">ajson</param>
+			</result>
+	    </action> 
+	    <action name="deleteEmployee" class="EmployeeAction" method="deleteEmployee">
+	    <result type="json" >
+				<param name="root">id</param>
+			</result>
+	    </action>
+	    <action name="editEmployee" class="EmployeeAction" method="editClient">
+	  <result>/WEB-INF/EditEmployee.jsp</result>
+	    </action>
+    </package>
+</struts>    
