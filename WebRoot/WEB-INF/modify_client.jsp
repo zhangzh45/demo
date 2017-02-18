@@ -90,7 +90,7 @@ text-transform:lowercase;}
   </head>
   
   <body>
-  <div class="topleft"><h1> 
+<div class=topleft onclick="document.location='checkIn.action';"><h1> 
 	organization system 
 	</h1></div>
 	<div class="body1">

@@ -2,14 +2,18 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Organization;
 import com.dao.OrganizationDAO;
-import com.model.Organization;
 import com.service.OrganizationService;
 
 public class OrganizationServiceImpl implements OrganizationService{
 
 	private OrganizationDAO organizationdao;
 	
+	public OrganizationDAO getOrganizationdao() {
+		return organizationdao;
+	}
+
 	public void setOrganizationdao(OrganizationDAO organizationdao) {
 		this.organizationdao=organizationdao;
 	}

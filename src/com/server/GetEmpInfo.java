@@ -9,11 +9,11 @@ import java.util.Set;
 import org.json.JSONArray;
 
 import com.action.EmployeeAction;
+import com.bean.Employee;
+import com.bean.Position;
+import com.bean.Role;
 import com.dao.PositionDAO;
 import com.dao.RoleDAO;
-import com.model.Employee;
-import com.model.Position;
-import com.model.Role;
 import com.service.EmployeeService;
 import com.service.impl.EmployeeServiceImpl;
 
@@ -42,13 +42,20 @@ public class GetEmpInfo {
 		GetEmpInfo.employeeservice = employeeservice;
 	}
 	
-	
-	public String  test(){
-	    String s=getEmployee(1);
-	    positiondao.findByEmpId(1);
-		getEmpfromrole(12);
-		return s;
-	}
+	/*
+	 * 测试
+	 */
+//	public String  test(){
+//	    String s=getEmployee(1);
+//	    positiondao.findByEmpId(1);
+//		getEmpfromrole(12);
+//		return s;
+//	}
+	/*
+	 * @method 根据角色获取对应的职员
+	 * @roleId 为角色ID
+	 * @return 返回职员列表
+	 */
 	public static  String getEmpfromrole(int roleid){
 		try {
 		List<Object> position = (List<Object>)positiondao.findByProperty("role.roleId", roleid);
@@ -72,6 +79,10 @@ public class GetEmpInfo {
 		
 	}
 	
+	/*
+	 * @mehtod 获取所有角色
+	 * @return 将角色对象转成json数据格式返回
+	 */
 	public static String getRoles(){
 		List<Role> role = roledao.findAll();
 		JSONArray json=new JSONArray();
@@ -84,6 +95,11 @@ public class GetEmpInfo {
  		return json.toString();
 	}
 	
+	/*
+	 * @method 查找指定的员工信息
+	 * @arg id ：员工的ID
+	 * @return 将员工具体信息转成json格式返回
+	 */
 	public static String getEmployee(int id){
     	  Employee emp=employeeservice.findById(id);
     	  JSONArray json=new JSONArray();
@@ -94,6 +110,12 @@ public class GetEmpInfo {
    		  json.put(map);  
    		  return json.toString();
     }
+	
+	/*
+	 * @mehtod 登录验证 
+	 * @args userId：用户ID
+	 * @return String 用户的登录密码
+	 */
 	public static String getPassword(int userId) {
 		Employee emp=employeeservice.findById(userId);
 		if (emp == null) return null;

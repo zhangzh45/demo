@@ -1,0 +1,871 @@
+.register-box-warp {
+  height: 450px;
+  width: 960px;
+}
+.register-box-warp form .form-group .form-control .register-area-hover {
+  background-color: #f5f7f7;
+  text-decoration: none;
+}
+.register-box-warp form .form-group .form-control .register-area-border {
+  border: 1px solid #43a0ff;
+}
+.register-box-warp #region {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 90px;
+  display: block;
+  height: 30px;
+}
+.register-box-warp .form-error {
+  color: red;
+  line-height: 1.7;
+  visibility: hidden;
+}
+.register-box-warp .register-box {
+  border-left: 1px solid #d4d4d4;
+  float: right;
+  height: 350px;
+  margin: 50px 0;
+  padding: 0 80px;
+  width: 320px;
+}
+.register-box-warp .register-box .hd {
+  *zoom: 1;
+  display: block;
+}
+.register-box-warp .register-box .hd:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.register-box-warp .register-box .hd:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.register-box-warp .register-box .hd h2 {
+  color: #818181;
+  display: inline;
+  float: left;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, tahoma, arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", SimSun, sans-serif;
+  text-align: center;
+}
+.register-box-warp .register-box .hd .static {
+  float: right;
+  color: #818181;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.register-box-warp .register-box .hd .active {
+  color: #197ae5;
+}
+.register-box-warp .placeholder {
+  color: #ddd;
+}
+.register-box-warp .register-bg {
+  float: left;
+  padding: 10px;
+  width: 458px;
+}
+.register-box-warp * {
+  margin: 0;
+  padding: 0;
+}
+.register-box-warp a {
+  color: #197ae5;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  background: 0 0;
+}
+.register-box-warp img {
+  vertical-align: middle;
+}
+.register-box-warp .static-form {
+  padding-top: 5px;
+}
+.register-box-warp .static-form * {
+  margin: 0;
+  padding: 0;
+}
+.register-box-warp .static-form a {
+  color: #197ae5;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  background: 0 0;
+}
+.register-box-warp .static-form #J_tabList .register-be {
+  color: #fff;
+}
+.register-box-warp .static-form #J_tabList .register-be a {
+  color: #197AE5;
+}
+.register-box-warp .static-form button {
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  overflow: visible;
+  text-transform: none;
+}
+.register-box-warp .static-form b,
+.register-box-warp .static-form strong {
+  font-weight: 700;
+}
+.register-box-warp .static-form .w130p {
+  width: 108px !important;
+}
+.register-box-warp .static-form .ui-dialog-close {
+  background: 0 0;
+  border: 0 none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 28px;
+  height: 20px;
+  line-height: 16px;
+  position: absolute;
+  top: 15px;
+  right: 13px;
+  padding: 0 4px;
+  transition: all 0.4s ease-in 0s;
+  -webkit-appearance: none;
+}
+.register-box-warp .static-form .clearfix {
+  display: block;
+}
+.register-box-warp .static-form .dropdown {
+  padding: 10px 15px;
+  position: relative;
+}
+.register-box-warp .static-form .input-control {
+  display: inline;
+  float: left;
+}
+.register-box-warp .static-form .input-control.text {
+  margin-right: 10px;
+}
+.register-box-warp .static-form .input-control.dropdown {
+  display: inline;
+  float: left;
+  height: 26px;
+  margin-right: 10px;
+  padding: 0;
+}
+.register-box-warp .static-form .input-text {
+  border: 1px solid #c6c9cc;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 4px;
+}
+.register-box-warp .static-form .regDialog2 {
+  width: 320px;
+  background-color: #fff;
+  padding: 43px 50px;
+  font-size: 13px;
+}
+.register-box-warp .static-form .regDialog2 .w180p {
+  width: 158px !important;
+}
+.register-box-warp .static-form .regDialog2 .input-text[disabled],
+.register-box-warp .static-form .regDialog2 .input-text[readonly] {
+  background-color: #eee;
+  cursor: default;
+}
+.register-box-warp .static-form .regDialog2 .ui-dialog-close {
+  color: #8c8c8c;
+  right: 15px;
+  top: 15px;
+}
+.register-box-warp .static-form .regDialog2 .title {
+  margin-bottom: 0;
+}
+.register-box-warp .static-form .regDialog2 .hint {
+  color: #818181;
+  font-size: 12px;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+.register-box-warp .static-form .regDialog2 img {
+  border: none;
+  vertical-align: middle;
+}
+.register-box-warp .static-form .regDialog2 fieldset,
+.register-box-warp .static-form .regDialog2 img {
+  border: 0 none;
+}
+.register-box-warp .static-form .regDialog2 .w210p {
+  width: 188px !important;
+}
+.register-box-warp .static-form .regDialog2 .btnSubmit {
+  background: #ff9c00;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.register-box-warp .static-form .regDialog2 .w320p {
+  width: 318px !important;
+}
+.register-box-warp .static-form .regDialog2 .btnSubmit:hover {
+  background: #ff7800;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list {
+  box-sizing: border-box;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group {
+  margin-bottom: 0;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control {
+  position: relative;
+  margin-right: 0;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-toggle {
+  border: 1px solid #c6c9cc;
+  color: #cdcdcd;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 6px;
+  width: 186px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .checked {
+  color: #333;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .disabled {
+  background-color: #f9f9f9;
+  color: #ccc;
+  cursor: text;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-toggle {
+  height: 26px;
+  line-height: 26px;
+  padding: 4px 10px;
+  margin-right: 10px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-toggle .caret {
+  color: gray;
+  float: right;
+  position: relative;
+  top: 11px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-toggle span {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-menu {
+  border: 1px solid #43a0ff;
+  font-size: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+  width: 128px;
+  top: 35px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .dropdown-menu a {
+  background-color: #fff;
+  color: #818181;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 7px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control input.input-text {
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid #c6c9cc;
+  padding: 10px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .icons {
+  background: url(http://static.51offer.com/skin/registration/images/common/input_icon.png) no-repeat scroll right center;
+  cursor: pointer;
+  display: block;
+  height: 18px;
+  position: absolute;
+  right: 5px;
+  top: 9px;
+  width: 18px;
+  z-index: 4;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .icons b {
+  display: none;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .icons.telephone {
+  background-position: 0 -60px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .changeVcode {
+  border: 1px solid #afd9ff;
+  background-color: #fff;
+  text-align: center;
+  color: #818181;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 98px;
+  height: 34px;
+  line-height: 34px;
+  -moz-user-select: none;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .changeVcode:hover {
+  border-color: #1d83f4;
+  color: #1d83f4;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .input-control .changeVcode {
+  border: 1px solid #afd9ff;
+  background-color: #fff;
+  text-align: center;
+  color: #818181;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 98px;
+  height: 34px;
+  line-height: 34px;
+  -moz-user-select: none;
+}
+.register-box-warp .static-form .regDialog2 .formBox .form-list .form-group .form-err {
+  visibility: hidden;
+  color: red;
+}
+.register-box-warp .static-form .regDialog2 .formBox .btnSubmit {
+  height: 36px;
+  color: #fff;
+  background-color: #1d83f4;
+  border-radius: 4px;
+  border: 0;
+  margin-top: 6px;
+}
+.register-box-warp .static-form .regDialog2 .formBox .btnSubmit:hover {
+  background-color: #4596ed;
+}
+.register-box-warp .static-form .regDialog2 .help {
+  bottom: 10px;
+  color: #818181;
+  margin: 10px 0 0;
+  position: absolute;
+  right: 10px;
+}
+.register-box-warp .static-form .cssBlueFont {
+  color: #197AE5;
+}
+.register-box-warp .static-form .voice-error {
+  /*color:#C11717;*/
+}
+.register-box-warp .static-form .cssFloatRight {
+  float: right;
+}
+.register-box-warp .static-form .form-group,
+.register-box-warp .static-form .form-control {
+  position: relative;
+}
+.register-box-warp .static-form .dropdown {
+  display: inline;
+  float: left;
+  height: 26px;
+  padding: 0;
+}
+.register-box-warp .static-form .dropdown .dropdown-menu {
+  max-height: 240px;
+  overflow-y: auto;
+  width: 128px;
+  top: 33px;
+}
+.register-box-warp .static-form .dropdown .dropdown-menu li {
+  background-color: #fff;
+  color: #818181;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 7px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.register-box-warp .static-form .dropdown .dropdown-menu a:hover {
+  background-color: #f5f7f7;
+}
+.register-box-warp .static-form .text {
+  display: inline;
+  float: left;
+}
+.register-box-warp .static-form .form-group .dropdown-toggle {
+  height: 24px;
+  line-height: 26px;
+  padding: 4px 10px;
+  margin-right: 10px;
+  border: 1px solid #c6c9cc;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+}
+.register-box-warp .static-form .form-group .dropdown-toggle .caret {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid;
+  display: inline-block;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  width: 0;
+  color: gray;
+  float: right;
+  position: relative;
+  top: 11px;
+}
+.register-box-warp .static-form .form-group .w130p {
+  width: 108px !important;
+}
+.register-box-warp .static-form .form-group .checked {
+  color: #818181;
+  background-color: #fff;
+}
+.register-box-warp .static-form .form-group .icon {
+  background: url(http://s2.51offer.com/51offer/public/global-ui/2015-08-18/icon.png) no-repeat;
+  display: block;
+  height: 34px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px;
+  z-index: 1;
+}
+.register-box-warp .static-form .form-group .icon-person {
+  background-position: 0 0;
+}
+.register-box-warp .static-form .form-group .icon-password {
+  background-position: 0 -68px;
+}
+.register-box-warp .static-form .form-group .icon-eye-no-password {
+  background-position: 0 -102px;
+}
+.register-box-warp .static-form .form-group .icon-telephonen {
+  background-position: 0 -136px;
+}
+.register-box-warp .static-form .form-group .w180p {
+  width: 125px !important;
+}
+.register-box-warp .static-form .form-group .w210p {
+  width: 155px !important;
+}
+.register-box-warp .static-form .form-group .verification {
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  width: 80px;
+  z-index: 4;
+}
+.register-box-warp .static-form .form-group .changeVcode {
+  border: 1px solid #afd9ff;
+  background-color: #fff;
+  text-align: center;
+  color: #818181;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 98px;
+  height: 32px;
+  line-height: 32px;
+  -moz-user-select: none;
+}
+.register-box-warp .static-form .form-group .label-key {
+  color: #A9A9A9;
+  cursor: text;
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 1.42857;
+  left: 0;
+  padding: 8px 41px 6px 11px;
+  position: absolute;
+  top: 0;
+  width: 198px;
+}
+.register-box-warp .static-form .input-text {
+  background-color: #fff;
+  border: 1px solid #c6c9cc;
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 1.42857;
+  padding: 6px 42.5px 6px 10px;
+  width: 265.5px;
+}
+.register-box-warp .static-form .input-text[type=password] {
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+}
+.register-box-warp .static-form .input-text.error {
+  border-color: #e84c3d;
+}
+.register-box-warp .static-form .forget-pwd {
+  color: #818181;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  top: -28px;
+}
+.register-box-warp .static-form .forget-pwd:hover {
+  color: #259;
+  text-decoration: underline;
+}
+.register-box-warp .static-form .button {
+  background-color: #1d83f4;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 6px;
+  text-align: center;
+  width: 100%;
+}
+.register-box-warp .static-form .button:hover {
+  background-color: #4596ed;
+}
+.register-box-warp .static-form .register {
+  color: #818181;
+  margin-top: 11px;
+}
+.register-box-warp .static-form .register a {
+  color: #1d83f4;
+}
+.register-box-warp .static-form .register a:hover {
+  text-decoration: underline;
+}
+.register-box-warp .static-form .entries {
+  padding-top: 40px;
+  text-align: center;
+}
+.register-box-warp .static-form .entries dt {
+  position: relative;
+}
+.register-box-warp .static-form .entries dt i {
+  border-top: 1px solid #ccc;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+.register-box-warp .static-form .entries dt span {
+  background-color: #fff;
+  color: #818181;
+  display: inline-block;
+  padding: 0 6px;
+  position: relative;
+  top: -13px;
+  z-index: 1;
+}
+.register-box-warp .static-form .entries dd a {
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+}
+.register-box-warp .static-form .entries dd .icon {
+  background: no-repeat;
+  display: inline-block;
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 30px;
+}
+.register-box-warp .static-form .entries dd .icon-uk {
+  background-image: url(http://s2.51offer.com/51offer/user/login/2015-07-29/icon-uk.png);
+}
+.register-box {
+  position: relative;
+  /*测试入学成功率*/
+}
+.register-box dl.register,
+.register-box dl.login {
+  background: #fff;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+.register-box dl.register #mobile_code,
+.register-box dl.login #mobile_code {
+  width: 70%;
+}
+.register-box dl.register .input-bar,
+.register-box dl.login .input-bar {
+  width: 100%;
+  border: solid 1px #d2d2d2;
+  margin-bottom: 14px;
+  border-radius: 3px;
+  line-height: 40px;
+  position: relative;
+}
+.register-box dl.register .input-bar .nation,
+.register-box dl.login .input-bar .nation {
+  width: 22%;
+  height: 40px;
+  float: left;
+  position: relative;
+  border-right: solid 1px #d2d2d2;
+  text-align: center;
+  font-size: 14px;
+}
+.register-box dl.register .input-bar .nation select.nation-list,
+.register-box dl.login .input-bar .nation select.nation-list {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  opacity: 0;
+}
+.register-box dl.register .input-bar .nation span.nation-txt,
+.register-box dl.login .input-bar .nation span.nation-txt {
+  color: #2693ff;
+}
+.register-box dl.register .input-bar input.text,
+.register-box dl.login .input-bar input.text {
+  border: 0;
+  color: #818181;
+  height: 38px;
+  font-size: 16px;
+  padding-left: 5px;
+}
+.register-box dl.register .input-bar input.p8,
+.register-box dl.login .input-bar input.p8 {
+  width: 90%;
+  padding: 0 8px;
+}
+.register-box dl.register .input-bar a.code-btn,
+.register-box dl.login .input-bar a.code-btn {
+  width: 90px;
+  height: 32px;
+  display: block;
+  background-color: #e9f3ff;
+  border: solid 1px #d4d4d4;
+  line-height: 32px;
+  text-align: center;
+  font-size: 12px;
+  color: #5c5c5c;
+  border-radius: 3px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  z-index: 50;
+}
+.register-box dl.register .input-bar i.plaintext,
+.register-box dl.login .input-bar i.plaintext {
+  width: 18px;
+  height: 12px;
+  display: block;
+  background-image: url(http://s2.51offer.com/51offer/2015-07-30/plaintext.png);
+  background-size: cover;
+  position: absolute;
+  right: 8px;
+  top: 14px;
+  z-index: 50;
+}
+.register-box dl.register .input-bar i.plaintext.show,
+.register-box dl.login .input-bar i.plaintext.show {
+  background-image: url(http://s2.51offer.com/51offer/2015-07-30/plaintext-on.png);
+}
+.register-box dl.register .input-bar .form-error,
+.register-box dl.login .input-bar .form-error {
+  line-height: 12px;
+  position: absolute;
+  left: 8px;
+  bottom: -14px;
+  z-index: 50;
+}
+.register-box dl.register .input-bar i.del,
+.register-box dl.login .input-bar i.del {
+  width: 18px;
+  height: 18px;
+  display: none;
+  background-image: url(http://s2.51offer.com/51offer/2015-07-31/del.png);
+  background-size: cover;
+  position: absolute;
+  top: 11px;
+  z-index: 50;
+}
+.register-box dl.register .input-bar i.d01,
+.register-box dl.login .input-bar i.d01 {
+  right: 10px;
+}
+.register-box dl.register .input-bar i.d02,
+.register-box dl.login .input-bar i.d02 {
+  right: 5px;
+}
+.register-box dl.register .input-bar i.d03,
+.register-box dl.login .input-bar i.d03 {
+  right: 40px;
+}
+.register-box dl.register .input-bar i.d04,
+.register-box dl.login .input-bar i.d04 {
+  right: 10px;
+}
+.register-box dl.register .login-bar,
+.register-box dl.login .login-bar,
+.register-box dl.register .register-bar,
+.register-box dl.login .register-bar {
+  margin-top: 20%;
+  text-align: center;
+}
+.register-box dl.register .login-bar a,
+.register-box dl.login .login-bar a,
+.register-box dl.register .register-bar a,
+.register-box dl.login .register-bar a {
+  color: #2693ff;
+  font-size: 14px;
+}
+.register-box dl.register dt .register-btn,
+.register-box dl.login dt .register-btn,
+.register-box dl.register dt .login-btn,
+.register-box dl.login dt .login-btn {
+  background-color: #2693ff;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 17px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  width: 100%;
+}
+.register-box dl.register dt span,
+.register-box dl.login dt span {
+  display: block;
+  font-size: 12px;
+  padding-top: 15px;
+}
+.register-box dl.register dt .register-btn span {
+  font-size: 17px;
+  line-height: 17px;
+}
+.register-box dl.register dd a.code-btn {
+  top: 4px;
+}
+.register-box dl.register dt span b,
+.register-box dl.login dt span b {
+  color: #e44700;
+  font-weight: 400;
+}
+.register-box .error {
+  border: solid 1px #ff4f00 !important;
+}
+.register-box .form-error {
+  font-size: 12px;
+  color: #ff4f00;
+}
+.register-box #registerForm .register-btn span {
+  padding-top: 0px;
+  font-size: 17px;
+}
+.register-box #registerForm .register-btn span.register-btn-schoolApi {
+  display: none;
+}
+.register-box .global-header span.schoolApi_tit {
+  display: block;
+  color: #1C7DE7;
+  font-size: 0.16rem;
+}
+.register-box .info {
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: #D8D8D8;
+  padding: 5px 8px;
+}
+.register-box .info p {
+  color: #fff;
+  font-size: 0.14rem;
+}
+.register-box #registerForm .register-btn span.register-btn-schoolApi {
+  display: block;
+  padding-top: 0px;
+  font-size: 17px;
+  background-color: #F38400;
+}
+.register-box .protocol {
+  text-align: left;
+  font-size: 0.12rem;
+  margin-bottom: 14px;
+}
+.register-box .protocol #J_option {
+  margin-right: 5px;
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #aaa;
+}
+.register-box .protocol a {
+  color: #2d87ff;
+}
+.register-box .gray {
+  background-color: #bbb;
+}
+.register-box .register-dialog .form-error {
+  margin-top: 5px;
+}
+.code-box {
+  display: none;
+}
+.code-cont {
+  width: 100%;
+}
+.code-cont input.text {
+  width: 55%;
+  padding: 10px;
+  font-size: 14px;
+  border: solid 1px #c8c7cc;
+  border-radius: 3px;
+  float: left;
+}
+.code-cont img {
+  padding: 5px;
+  border: solid 1px #c8c7cc;
+  margin-left: 10px;
+}
+@media (max-width: 320px) {
+  .code-cont img {
+    margin-left: 5px;
+  }
+}
+.ui-dialog-hd {
+  line-height: 40px;
+  border-bottom: solid 1px #c8c7cc;
+  text-align: center;
+}
+.phonetxt {
+  font-size: 12px;
+  line-height: 20px;
+  color: #ff4f00;
+  position: absolute;
+  left: 0;
+  top: -20px;
+}
+.ui-dialog .form-error {
+  font-size: 12px;
+  color: #ff4f00;
+}

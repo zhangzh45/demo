@@ -2,9 +2,9 @@ package com.service;
 
 import java.util.List;
 
-import com.dao.EmployeeDAO;
+import com.bean.Role;
 import com.dao.RoleDAO;
-import com.model.Role;
+import com.dao.impl.EmployeeDAOImpl;
 
 public interface RoleService {
 

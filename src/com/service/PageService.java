@@ -1,17 +1,17 @@
 package com.service;
 
+import com.bean.Page;
 import com.dao.PageDAO;
-import com.model.Page;
 
 public interface PageService {
 
 	public abstract void setPagedao(PageDAO pagedao);
 
 	/*
-	 * ·ÖÒ³²éÑ¯
-	 * @@param currentPageµ±Ç°µÚ¼¸Ò³
-	 * @@param pageSize Ã¿Ò³´óÐ¡
-	 * @@return ·â±ÕÁË·ÖÒ³ÐÅÏ¢£¨°üÀ¨¼ÇÂ¼¼¯list£©µÄentry
+	 * ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯
+	 * @@param currentPageï¿½ï¿½Ç°ï¿½Ú¼ï¿½Ò³
+	 * @@param pageSize Ã¿Ò³ï¿½ï¿½Ð¡
+	 * @@return ï¿½ï¿½ï¿½ï¿½Ë·ï¿½Ò³ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½entry
 	 */
 	public abstract Page queryForPage(String hqls, int pageSize, int page);
 

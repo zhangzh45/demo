@@ -258,9 +258,10 @@ form button:hover {
 			<h1>Welcome</h1>
 			
 			<form class="form" action="checkIn.action"  method="post">
-				<input type="text" placeholder="Username" name="name">
+				<input type="text" placeholder="Username" name="id">
 				<input type="password" placeholder="Password" name="password">
 				<button type="submit" id="login-button">Login</button>
+				
 			</form>
 		</div>
 		
@@ -286,6 +287,7 @@ $('#login-button').click(function (event) {
 	$('form').fadeOut(500);
 	$('.wrapper').addClass('form-success');
 });
+
 </script>
 
 </body>

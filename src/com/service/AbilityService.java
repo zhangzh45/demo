@@ -2,8 +2,8 @@ package com.service;
 
 import java.util.List;
 
+import com.bean.Ability;
 import com.dao.AbilityDAO;
-import com.model.Ability;
 
 public interface AbilityService {
 	

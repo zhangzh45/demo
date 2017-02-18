@@ -2,14 +2,18 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Role;
 import com.dao.RoleDAO;
-import com.model.Role;
 import com.service.RoleService;
 
 public class RoleServiceImpl implements RoleService{
 
 	private RoleDAO roledao;
 	
+	public RoleDAO getRoledao() {
+		return roledao;
+	}
+
 	public void setRoledao(RoleDAO roledao) {
 		this.roledao=roledao;
 	}
@@ -37,4 +41,5 @@ public class RoleServiceImpl implements RoleService{
 	public List<Role> getAllRole(){
 		return roledao.findAll();
 	}
+	
 }

@@ -1,7 +1,9 @@
 package com.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +18,11 @@ import org.json.JSONArray;
 
 
 
+import com.bean.Department;
+import com.bean.Org;
+import com.bean.Organization;
 import com.dao.OrganizationDAO;
-import com.model.Organization;
 
-import com.model.Org;
 import com.service.OrganizationService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -36,7 +39,9 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 
 	private Organization organization=new Organization();
 	private Map<String,Object>application;
+	private Map<String,List<Department>> organMap = new HashMap<String, List<Department>>();
 	
+
 	private String info;
 	private String selectDepart;
 	private String treeJson;
@@ -151,7 +156,7 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 				json.put(map);
 		}
 		System.out.print(json);
-	treeJson=json.toString();
+		treeJson=json.toString();
 //	treeJson=json;
 		//response.getWriter().print(JSONArray.fromObject(list).toString());
 		return SUCCESS;
@@ -192,6 +197,32 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 		
 	}
 	
+	/**
+	 * 获取组织的所有信息，但不进行懒加载
+	 * @return 
+	 */
+	public String getAllOrganInfo() {
+		List<Organization> organList = organizationService.getallOrganization();
+		List<Department> reOrganList = new ArrayList<Department>();
+		if(organList !=null && organList.size() > 0 ) {
+			for ( Organization organ : organList) {  // 只获取部门的部分信息
+			
+				Department dep = new Department();
+				dep.setDepId(organ.getOrgId().toString());
+				dep.setDepName(organ.getOrgName());
+				if( organ.getParentOrgId() == null ) {
+					dep.setParentDepId("");
+				} else {
+					dep.setParentDepId(organ.getParentOrgId().toString());
+				}
+				
+				reOrganList.add(dep);
+			}
+			organMap.put("departments", reOrganList);
+		}
+		return SUCCESS;
+	}
+	
 	public String exploreAddDepart(){
 		return INPUT;
 	}
@@ -203,5 +234,15 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 	public  void setOrganizationdao(OrganizationDAO organizationdao) {
 		this.organizationdao = organizationdao;
 	}
+	
+	public Map<String, List<Department>> getOrganMap() {
+		return organMap;
+	}
+
+	public void setOrganMap(Map<String, List<Department>> organMap) {
+		this.organMap = organMap;
+	}
+
+	
 
 }

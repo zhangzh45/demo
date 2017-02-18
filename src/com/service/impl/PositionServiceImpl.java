@@ -2,8 +2,8 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Position;
 import com.dao.PositionDAO;
-import com.model.Position;
 import com.service.PositionService;
 
 public class PositionServiceImpl implements PositionService{
@@ -52,6 +52,10 @@ public class PositionServiceImpl implements PositionService{
 
 	public Position findById(int positionid) {
 		return positiondao.findById(positionid);
+	}
+	
+	public List<Object[]> getPositions() {
+		return positiondao.getPositions();
 	}
 
 }

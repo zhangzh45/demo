@@ -1,8 +1,9 @@
 package com.service;
 
 import java.util.List;
+
+import com.bean.Employee;
 import com.dao.EmployeeDAO;
-import com.model.Employee;
 
 public interface EmployeeService {
 	
@@ -23,4 +24,7 @@ public interface EmployeeService {
 	public abstract List findByUserId(int userid);
 	
 	public abstract Employee findById(int employeeid);
+	
+	public abstract List findAll();
+
 }

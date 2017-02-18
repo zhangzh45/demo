@@ -2,8 +2,8 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Employee;
 import com.dao.EmployeeDAO;
-import com.model.Employee;
 import com.service.EmployeeService;
 
 public  class EmployeeServiceImpl implements EmployeeService{
@@ -42,5 +42,9 @@ public  class EmployeeServiceImpl implements EmployeeService{
 
 	public Employee findById(int employeeid) {
 		return employeedao.findById(employeeid);
+	}
+	
+	public List findAll() {
+		return employeedao.findAll();
 	}
 }

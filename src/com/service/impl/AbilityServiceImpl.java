@@ -2,14 +2,18 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Ability;
 import com.dao.AbilityDAO;
-import com.model.Ability;
 import com.service.AbilityService;
 
 public class AbilityServiceImpl implements AbilityService{
 
 	private AbilityDAO abilitydao;
 	
+	public AbilityDAO getAbilitydao() {
+		return abilitydao;
+	}
+
 	public void setAbilitydao(AbilityDAO abilitydao) {
 		this.abilitydao = abilitydao;
 	}

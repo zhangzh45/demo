@@ -2,24 +2,28 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Page;
 import com.dao.PageDAO;
-import com.model.Page;
 import com.service.PageService;
 
 public class PageServiceImpl implements PageService{
 	private PageDAO pagedao;
+	public PageDAO getPagedao() {
+		return pagedao;
+	}
+
 	public void setPagedao(PageDAO pagedao) {
 		this.pagedao = pagedao;
 	}
 
 	public Page queryForPage(String hqls, int pageSize, int page) {
-		final String hql=hqls;//²éÑ¯Óï¾ä
-		int allRow=pagedao.getAllRowCount(hql);//×Ü¼ÇÂ¼Êı
-		int totalPage=Page.countTotalPage(pageSize, allRow);//×ÜÒ³Êı
-		final int offset=Page.countOffset(pageSize, page);//µ±Ç°Ò³¿ªÊ¼¼ÇÂ¼
-		final int length=pageSize;//Ã¿Ò³¼ÇÂ¼Êı
+		final String hql=hqls;//æŸ¥è¯¢è¯­å¥
+		int allRow=pagedao.getAllRowCount(hql);//æ€»è®°å½•æ•°
+		int totalPage=Page.countTotalPage(pageSize, allRow);//æ€»é¡µæ•°
+		final int offset=Page.countOffset(pageSize, page);//å½“å‰é¡µå¼€å§‹è®°å½•
+		final int length=pageSize;//æ¯é¡µè®°å½•æ•°
 		final int currentPage=Page.countCurrentPage(page);
-		List<Page> list=pagedao.queryForPage(hql, offset, length);//"Ò»Ò³"µÄ¼ÇÂ¼
+		List<Page> list=pagedao.queryForPage(hql, offset, length);//"ä¸€é¡µ"çš„è®°å½•
 		Page p=new Page();
 		p.setPageSize(pageSize);
 		p.setCurrentPage(currentPage);
@@ -31,3 +35,4 @@ public class PageServiceImpl implements PageService{
 	}
 
 }
+

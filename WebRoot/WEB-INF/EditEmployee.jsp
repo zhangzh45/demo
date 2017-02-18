@@ -74,7 +74,8 @@ text-transform:lowercase;}
   </head>
   
   <body>
-  <div class="topleft"><h1> 
+    
+<div class=topleft onclick="document.location='checkIn.action';"><h1> 
 	organization system 
 	</h1></div>
 	<div class="body1">
@@ -88,8 +89,8 @@ text-transform:lowercase;}
 <!-- id -->
 <div id='name' class='outerDiv'>
 <label for="name">id:</label> 
-<input type="text" name="id" readonly="readonly"  /> 
-<div class='message' id='nameDiv'> Enter the id of the employee(number only). </div>
+<input type="text" name="id" id="id" readonly="readonly"  /> 
+<div class='message' id='nameDiv'> the id of the employee(read only). </div>
 </div>
 <div class='clearfix'></div>
 <!-- firstname /////////////////////////////////////////////////-->
@@ -120,7 +121,20 @@ text-transform:lowercase;}
 <div class='message' id='emailDiv'> Enter the age of the employee(number only). </div>
 </div>
 <div class='clearfix'></div>
-
+<!-- age ///////////////////////////////////////////-->
+<div id='email' class='outerDiv'>
+<label for="email">邮箱:</label> 
+<input type="text" name="email"  /> 
+<div class='message' id='emailDiv'> Enter the email of the employee(number only). </div>
+</div>
+<div class='clearfix'></div>
+<!-- age ///////////////////////////////////////////-->
+<div id='email' class='outerDiv'>
+<label for="email">电话:</label> 
+<input type="text" name="phone"  /> 
+<div class='message' id='emailDiv'> Enter the phone number of the employee(number only). </div>
+</div>
+<div class='clearfix'></div>
 <div class="omg">
 <div id='submit' class='outerDiv'>
 <input type="submit" value="确认" /> 
@@ -141,6 +155,22 @@ text-transform:lowercase;}
 <br>
   </div>
   </div>
+<script type="text/javascript" >
+  var href = document.location.search.slice(1);
+  var arr = href.split("&");
+  
+  var id1 = "";
+  
+  for(var i =0; i < arr.length; i++) {
+  var tmp_arr = arr[i].split("=");
+  if(tmp_arr[0] == "key") {
+  id1 = tmp_arr[1];
+  document.getElementById("id").value=id1;
+  break;
+  }
+  }
+  
+  </script>
   </body>
 
 </html>

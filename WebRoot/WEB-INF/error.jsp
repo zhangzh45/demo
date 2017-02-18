@@ -24,7 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div style=”color:red;”> 
-  <h3>error</h3>
+  <h1>登录失败</h1>
+  <h2>用户名或密码错误</h2>
 <s:fielderror/> 
 </div>
   </body>

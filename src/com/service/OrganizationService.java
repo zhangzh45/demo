@@ -1,8 +1,9 @@
 package com.service;
 
 import java.util.List;
+
+import com.bean.Organization;
 import com.dao.OrganizationDAO;
-import com.model.Organization;
 
 public interface OrganizationService {
 	

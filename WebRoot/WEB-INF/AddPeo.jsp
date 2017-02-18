@@ -21,6 +21,15 @@ a{color: rgb(0, 114, 191); text-decoration: none;}
 /*注册*/
 *:focus{outline:none; /* Prevents blue border in Webkit */}
 form {margin: 20px auto;}
+select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+   -webkit-appearance: none; /*for chrome*/
+}
 p {line-height: 1.6;}
 #tw-outer{background:url("images/bg-clouds.png") repeat-x scroll 0 0 #000000;height:385px;}
 #tw-logo{margin-left:192px;width:180px;}
@@ -70,7 +79,7 @@ text-transform:lowercase;}
   </head>
   
   <body>
-  <div class="topleft"><h1> 
+<div class=topleft onclick="document.location='checkIn.action';"><h1> 
 	organization system 
 	</h1></div>
 	<div class="body1">
@@ -81,13 +90,6 @@ text-transform:lowercase;}
 <div id="tw-outer">
 <div id="tw">
 <s:form action="addclient" method="post" id="addClient" namespace="/client">
-<!-- id -->
-<div id='name' class='outerDiv'>
-<label for="name">id:</label> 
-<input type="text" name="id" required  /> 
-<div class='message' id='nameDiv'> Enter the id of the employee(number only). </div>
-</div>
-<div class='clearfix'></div>
 <!-- firstname /////////////////////////////////////////////////-->
 <div id='username' class='outerDiv'>
 <label for="username">名:</label> 
@@ -98,7 +100,7 @@ text-transform:lowercase;}
 <!-- lastname //////////////////////////////////////////////////////-->
 <div id='username' class='outerDiv'>
 <label for="username">姓:</label> 
-<input type="text" name="lastname" required /> 
+<input type="text" name="lastname" required="required"/> 
 <div class='message' id='usernameDiv'> Enter the lastname of the employee. </div>
 </div>
 <div class='clearfix'></div>
@@ -116,11 +118,18 @@ text-transform:lowercase;}
 <div class='message' id='emailDiv'> Enter the age of the employee(number only). </div>
 </div>
 <div class='clearfix'></div>
-<!-- org ///////////////////////////////////////////-->
+<!-- age ///////////////////////////////////////////-->
 <div id='email' class='outerDiv'>
-<label for="email">组织id:</label> 
-<input type="text" name="orgid"  /> 
-<div class='message' id='emailDiv'> Enter the organization id of the employee(number only). </div>
+<label for="email">邮箱:</label> 
+<input type="text" name="email"  /> 
+<div class='message' id='emailDiv'> Enter the email of the employee. </div>
+</div>
+<div class='clearfix'></div>
+<!-- age ///////////////////////////////////////////-->
+<div id='email' class='outerDiv'>
+<label for="email">电话:</label> 
+<input type="text" name="phone"  /> 
+<div class='message' id='emailDiv'> Enter the telephone number of the employee(number only). </div>
 </div>
 <div class='clearfix'></div>
 <div class="omg">
