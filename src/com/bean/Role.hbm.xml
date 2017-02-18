@@ -13,6 +13,9 @@
         <property name="roleName" type="java.lang.String">
             <column name="RoleName" length="45" />
         </property>
+        <property name="roleDesc" type="java.lang.String">
+            <column name="RoleDesc" length="45" />
+        </property>
         <set name="positions" inverse="true">
             <key>
                 <column name="RoleId" />

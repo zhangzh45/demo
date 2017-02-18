@@ -13,6 +13,9 @@
         <property name="abiName" type="java.lang.String">
             <column name="AbiName" length="45" />
         </property>
+        <property name="abiDesc" type="java.lang.String">
+            <column name="AbiDesc" length="45" />
+        </property>
         <set name="employees" inverse="true" table="emp_abi_relation" catalog="newdb">
             <key>
                 <column name="AbiId" />

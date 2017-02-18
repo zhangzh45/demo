@@ -25,6 +25,9 @@
         <property name="posName" type="java.lang.String">
             <column name="PosName" length="45" />
         </property>
+        <property name="posDesc" type="java.lang.String">
+            <column name="PosDesc" length="45" />
+        </property>
         <set name="employees" table="emp_pos_relation" catalog="newdb">
             <key>
                 <column name="PosId" not-null="true" />

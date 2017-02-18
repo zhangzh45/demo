@@ -15,6 +15,7 @@ public class Role implements java.io.Serializable {
 
 	private Integer roleId;
 	private String roleName;
+	private String roleDesc;
 	private Set positions = new HashSet(0);
 
 	// Constructors
@@ -28,8 +29,16 @@ public class Role implements java.io.Serializable {
 		this.roleName = roleName;
 		this.positions = positions;
 	}
-
+	
 	// Property accessors
+
+	public Role(Integer roleId, String roleName, String roleDesc, Set positions) {
+		super();
+		this.roleId = roleId;
+		this.roleName = roleName;
+		this.roleDesc = roleDesc;
+		this.positions = positions;
+	}
 
 	public Integer getRoleId() {
 		return this.roleId;
@@ -45,6 +54,14 @@ public class Role implements java.io.Serializable {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+	
+	public String getRoleDesc() {
+		return roleDesc;
+	}
+
+	public void setRoleDesc(String roleDesc) {
+		this.roleDesc = roleDesc;
 	}
 
 	public Set getPositions() {

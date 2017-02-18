@@ -24,7 +24,7 @@
 		</property>
 		<property name="url" value="jdbc:mysql://127.0.0.1:3306/newdb"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="mysql"></property>
+		<property name="password" value="3330428190"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -101,6 +101,12 @@
 		</property>
 		<property name="positiondao">
 			<ref bean="PositionDAO"/>
+		</property>
+		<property name="organizationDao">
+			<ref bean="OrganizationDAO"/>
+		</property>
+		<property name="capacitydao">
+			<ref bean="AbilityDAO"/>
 		</property>
 	</bean>
 	<!-- Organization配置 -->

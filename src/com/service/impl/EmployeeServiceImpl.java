@@ -47,4 +47,8 @@ public  class EmployeeServiceImpl implements EmployeeService{
 	public List findAll() {
 		return employeedao.findAll();
 	}
+	
+	public int getEmployeeNum() {
+		return employeedao.findAll().size();
+	}
 }

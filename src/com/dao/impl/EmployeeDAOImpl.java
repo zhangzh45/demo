@@ -72,6 +72,8 @@ public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO 
 			throw re;
 		}
 	}
+	
+	
 
 	/* (non-Javadoc)
 	 * @see com.dao.EmployeeDAO#findByExample(com.model.Employee)

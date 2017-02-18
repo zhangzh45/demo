@@ -13,6 +13,9 @@
         <property name="orgName" type="java.lang.String">
             <column name="OrgName" length="45" />
         </property>
+        <property name="orgDesc" type="java.lang.String">
+            <column name="OrgDesc" length="45" />
+        </property>
         <property name="parentOrgId" type="java.lang.Integer">
             <column name="ParentOrgId" />
         </property>
