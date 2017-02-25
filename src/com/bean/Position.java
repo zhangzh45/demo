@@ -28,22 +28,7 @@ public class Position implements java.io.Serializable {
 
 	/** full constructor */
 	public Position(Organization organization, Role role, Integer empId,
-			Integer privilege, String posName, Set employees) {
-		this.organization = organization;
-		this.role = role;
-		this.empId = empId;
-		this.privilege = privilege;
-		this.posName = posName;
-		this.employees = employees;
-	}
-	
-	// Property accessors
-
-	public Position(Integer posId, Organization organization, Role role,
-			Integer empId, Integer privilege, String posName, String posDesc,
-			Set employees) {
-		super();
-		this.posId = posId;
+			Integer privilege, String posName, String posDesc, Set employees) {
 		this.organization = organization;
 		this.role = role;
 		this.empId = empId;
@@ -52,6 +37,8 @@ public class Position implements java.io.Serializable {
 		this.posDesc = posDesc;
 		this.employees = employees;
 	}
+
+	// Property accessors
 
 	public Integer getPosId() {
 		return this.posId;
@@ -100,9 +87,9 @@ public class Position implements java.io.Serializable {
 	public void setPosName(String posName) {
 		this.posName = posName;
 	}
-	
+
 	public String getPosDesc() {
-		return posDesc;
+		return this.posDesc;
 	}
 
 	public void setPosDesc(String posDesc) {

@@ -96,17 +96,17 @@
 		<property name="employeeservice" >
 			<ref bean="EmployeeService"/>
 		</property>
-		<property name="roledao">
-			<ref bean="RoleDAO"/>
+		<property name="roleservice">
+			<ref bean="RoleService"/>
 		</property>
-		<property name="positiondao">
-			<ref bean="PositionDAO"/>
+		<property name="positionservice">
+			<ref bean="PositionService"/>
 		</property>
-		<property name="organizationDao">
-			<ref bean="OrganizationDAO"/>
+		<property name="organizationservice">
+			<ref bean="OrganizationService"/>
 		</property>
-		<property name="capacitydao">
-			<ref bean="AbilityDAO"/>
+		<property name="capacityservice">
+			<ref bean="AbilityService"/>
 		</property>
 	</bean>
 	<!-- Organization配置 -->

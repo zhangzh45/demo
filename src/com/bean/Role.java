@@ -3,8 +3,6 @@ package com.bean;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.struts2.json.annotations.JSON;
-
 /**
  * Role entity. @author MyEclipse Persistence Tools
  */
@@ -25,20 +23,13 @@ public class Role implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Role(String roleName, Set positions) {
-		this.roleName = roleName;
-		this.positions = positions;
-	}
-	
-	// Property accessors
-
-	public Role(Integer roleId, String roleName, String roleDesc, Set positions) {
-		super();
-		this.roleId = roleId;
+	public Role(String roleName, String roleDesc, Set positions) {
 		this.roleName = roleName;
 		this.roleDesc = roleDesc;
 		this.positions = positions;
 	}
+
+	// Property accessors
 
 	public Integer getRoleId() {
 		return this.roleId;
@@ -55,9 +46,9 @@ public class Role implements java.io.Serializable {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-	
+
 	public String getRoleDesc() {
-		return roleDesc;
+		return this.roleDesc;
 	}
 
 	public void setRoleDesc(String roleDesc) {
@@ -68,7 +59,6 @@ public class Role implements java.io.Serializable {
 		return this.positions;
 	}
 
-	@JSON 
 	public void setPositions(Set positions) {
 		this.positions = positions;
 	}

@@ -3,6 +3,7 @@ package com.server;
 import java.util.HashMap;
 
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 import com.action.EmployeeAction;
 import com.dao.AbilityDAO;
 import com.dao.AbilityDAO;
+import com.dao.EmployeeDAO;
 import com.dao.OrganizationDAO;
 import com.dao.PositionDAO;
 import com.dao.RoleDAO;
@@ -24,58 +26,72 @@ import com.bean.Position;
 import com.bean.Role;
 import com.service.AbilityService;
 import com.service.EmployeeService;
+import com.service.OrganizationService;
+import com.service.PositionService;
+import com.service.RoleService;
 import com.service.impl.EmployeeServiceImpl;
 
 
 public class GetEmpInfo {
-	private  static RoleDAO roledao;
-	private  static PositionDAO positiondao;
+	private  static RoleService roleservice;
+	private  static PositionService positionservice;
 	private  static EmployeeService employeeservice;
-	private static  AbilityDAO capacitydao;
-	private static  OrganizationDAO organizationDao;
+	private static  AbilityService capacityservice;
+	private static  OrganizationService organizationservice;
+	
+	
+	
+	public RoleService getRoleservice() {
+		return roleservice;
+	}
 
-	public  RoleDAO getRoledao() {
-		return roledao;
+	public void setRoleservice(RoleService roleservice) {
+		this.roleservice = roleservice;
 	}
-	public  void setRoledao(RoleDAO roledao) {
-		GetEmpInfo.roledao = roledao;
-	} 
-	public  PositionDAO getPositiondao() {
-		return positiondao;
+
+	public PositionService getPositionservice() {
+		return positionservice;
 	}
-	public  void setPositiondao(PositionDAO positiondao) {
-		  this.positiondao = positiondao;
+
+	public void setPositionservice(PositionService positionservice) {
+		this.positionservice = positionservice;
 	}
-	public  EmployeeService getEmployeeservice() {
+
+	public EmployeeService getEmployeeservice() {
 		return employeeservice;
 	}
-	public  void setEmployeeservice(EmployeeService employeeservice) {
-		GetEmpInfo.employeeservice = employeeservice;
+
+	public void setEmployeeservice(EmployeeService employeeservice) {
+		this.employeeservice = employeeservice;
 	}
-	
-	
-	public  AbilityDAO getCapacitydao() {
-		return capacitydao;
+
+	public AbilityService getCapacityservice() {
+		return capacityservice;
 	}
-	public  void setCapacitydao(AbilityDAO capacitydao) {
-		GetEmpInfo.capacitydao = capacitydao;
+
+	public void setCapacityservice(AbilityService capacityservice) {
+		this.capacityservice = capacityservice;
 	}
-	public  OrganizationDAO getOrganizationDao() {
-		return organizationDao;
+
+	public OrganizationService getOrganizationservice() {
+		return organizationservice;
 	}
-	public  void setOrganizationDao(OrganizationDAO organizationDao) {
-		this.organizationDao = organizationDao;
+
+	public void setOrganizationservice(
+			OrganizationService organizationservice) {
+		this.organizationservice = organizationservice;
 	}
+
 	public String  test(){
 	    String s=getEmployee(1);
-	    positiondao.findByEmpId(1);
+	    positionservice.findByEmpId(1);
 		getEmpfromrole(12);
 		return s;
 	}
 	
 	public static  String getEmpfromrole(int roleid){
 		try {
-		List<Object> position = (List<Object>)positiondao.findByProperty("role.roleId", roleid);
+		List<Object> position = (List<Object>)positionservice.findByRoleId(roleid);
 		JSONArray json=new JSONArray();
 		for (int i = 0; i< position.size();i++){
 			Object[] o=(Object[]) position.get(i);
@@ -97,7 +113,7 @@ public class GetEmpInfo {
 	}
 	
 	public static String getRoles(){
-		List<Role> role = roledao.findAll();
+		List<Role> role = roleservice.getAllRole();
 		JSONArray json=new JSONArray();
  		for (int i=0; i<role.size();i++){
  			Map<String, String> map=new HashMap<String, String>();
@@ -130,18 +146,30 @@ public class GetEmpInfo {
 	
 	public static  String getPosfromemp(int empId){
 		try {
-		List<Position> position = positiondao.findByEmpId(empId);
+		List<Employee> emp_pos = employeeservice.findPositionsByEmpId(empId);
 		JSONArray json=new JSONArray();
-		System.out.println(position.size());
-		for (int i = 0; i< position.size();i++){
-			Position pos = new Position();
-			pos = position.get(i);
+		System.out.println(emp_pos.size());
+		for (int i = 0; i< emp_pos.size();i++){
+			Set<Position> positions = new HashSet(0);
+			positions = emp_pos.get(i).getPositions();
+			
  			Map<String, String> map=new HashMap<String, String>();
- 			//map.put("empId",pos.getEmpId().toString());
- 			map.put("posId",pos.getPosId().toString());
- 			map.put("posName",pos.getPosName().toString());
- 			json.put(map);
+ 			
+ 			for(Position pos : positions){
+ 				map.put("posId",pos.getPosId().toString());
+ 	 			map.put("posName",pos.getPosName().toString());
+ 	 			json.put(map);
+ 			}
+ 			/*Iterator<Position> it = positions.iterator();
+ 			while(it.hasNext()){
+ 				Position pos = (Position) it.next();
+ 				map.put("posId",pos.getPosId().toString());
+ 	 			map.put("posName",pos.getPosName().toString());
+ 	 			json.put(map);
+ 			}*/
+ 			
 		}
+		System.out.println("positions:"+json.toString());
 		return json.toString();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -195,7 +223,7 @@ public class GetEmpInfo {
 	
 	public static String getAllEmployees() {
 		JSONArray json=new JSONArray();
-		List<Employee> emps = employeeservice.getEmployeedao().findAll();
+		List<Employee> emps = employeeservice.findAll();
 		for(int i = 0; i < emps.size(); i++){
 			Employee emp = new Employee();
 			emp = emps.get(i);
@@ -217,7 +245,7 @@ public class GetEmpInfo {
 	
 	public static String getAllCapacities() {
 		JSONArray json=new JSONArray();
-		List<Ability> caps = capacitydao.findAll();
+		List<Ability> caps = capacityservice.findAll();
 		for(int i = 0; i < caps.size(); i++){
 			Ability cap = new Ability();
 			cap = caps.get(i);
@@ -233,7 +261,7 @@ public class GetEmpInfo {
 	
 	public static String getAllOrgs() {
 		JSONArray json=new JSONArray();
-		List<Organization> orgs = organizationDao.findAll();
+		List<Organization> orgs = organizationservice.getallOrganization();
 		for(int i = 0; i < orgs.size(); i++){
 			Organization org = new Organization();
 			org = orgs.get(i);
@@ -256,7 +284,7 @@ public class GetEmpInfo {
 	
 	public static String getAllPositions() {
 		JSONArray json=new JSONArray();
-		List<Position> poss = positiondao.findAll();
+		List<Position> poss = positionservice.findAll();
 		for(int i = 0; i < poss.size(); i++){
 			Position pos = new Position();
 			pos = poss.get(i);
@@ -278,7 +306,7 @@ public class GetEmpInfo {
 	
 	public static String getAllRoles() {
 		JSONArray json=new JSONArray();
-		List<Role> roles = roledao.findAll();
+		List<Role> roles = roleservice.getAllRole();
 		for(int i = 0; i < roles.size(); i++){
 			Role role = new Role();
 			role = roles.get(i);

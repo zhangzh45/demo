@@ -13,9 +13,9 @@ public class Organization implements java.io.Serializable {
 
 	private Integer orgId;
 	private String orgName;
+	private Integer parentOrgId;
 	private String orgType;
 	private String orgDesc;
-	private Integer parentOrgId;
 	private Set positions = new HashSet(0);
 	private Set employees = new HashSet(0);
 
@@ -26,27 +26,17 @@ public class Organization implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Organization(String orgName, Integer parentOrgId, Set positions,
-			Set employees) {
+	public Organization(String orgName, Integer parentOrgId, String orgType,
+			String orgDesc, Set positions, Set employees) {
 		this.orgName = orgName;
 		this.parentOrgId = parentOrgId;
-		this.positions = positions;
-		this.employees = employees;
-	}
-	
-	// Property accessors
-
-	public Organization(Integer orgId, String orgName, String orgType,
-			String orgDesc, Integer parentOrgId, Set positions, Set employees) {
-		super();
-		this.orgId = orgId;
-		this.orgName = orgName;
 		this.orgType = orgType;
 		this.orgDesc = orgDesc;
-		this.parentOrgId = parentOrgId;
 		this.positions = positions;
 		this.employees = employees;
 	}
+
+	// Property accessors
 
 	public Integer getOrgId() {
 		return this.orgId;
@@ -63,22 +53,6 @@ public class Organization implements java.io.Serializable {
 	public void setOrgName(String orgName) {
 		this.orgName = orgName;
 	}
-	
-	public String getOrgType() {
-		return orgType;
-	}
-
-	public void setOrgType(String orgType) {
-		this.orgType = orgType;
-	}
-
-	public String getOrgDesc() {
-		return orgDesc;
-	}
-
-	public void setOrgDesc(String orgDesc) {
-		this.orgDesc = orgDesc;
-	}
 
 	public Integer getParentOrgId() {
 		return this.parentOrgId;
@@ -86,6 +60,22 @@ public class Organization implements java.io.Serializable {
 
 	public void setParentOrgId(Integer parentOrgId) {
 		this.parentOrgId = parentOrgId;
+	}
+
+	public String getOrgType() {
+		return this.orgType;
+	}
+
+	public void setOrgType(String orgType) {
+		this.orgType = orgType;
+	}
+
+	public String getOrgDesc() {
+		return this.orgDesc;
+	}
+
+	public void setOrgDesc(String orgDesc) {
+		this.orgDesc = orgDesc;
 	}
 
 	public Set getPositions() {

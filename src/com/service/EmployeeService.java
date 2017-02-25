@@ -28,5 +28,7 @@ public interface EmployeeService {
 	public abstract List findAll();
 	
 	public abstract int getEmployeeNum();
+	
+	public abstract List findPositionsByEmpId(int employeeid);
 
 }

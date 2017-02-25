@@ -23,20 +23,13 @@ public class Ability implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Ability(String abiName, Set employees) {
-		this.abiName = abiName;
-		this.employees = employees;
-	}
-	
-	// Property accessors
-
-	public Ability(Integer abiId, String abiName, String abiDesc, Set employees) {
-		super();
-		this.abiId = abiId;
+	public Ability(String abiName, String abiDesc, Set employees) {
 		this.abiName = abiName;
 		this.abiDesc = abiDesc;
 		this.employees = employees;
 	}
+
+	// Property accessors
 
 	public Integer getAbiId() {
 		return this.abiId;
@@ -54,9 +47,8 @@ public class Ability implements java.io.Serializable {
 		this.abiName = abiName;
 	}
 
-	
 	public String getAbiDesc() {
-		return abiDesc;
+		return this.abiDesc;
 	}
 
 	public void setAbiDesc(String abiDesc) {
