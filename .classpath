@@ -22,6 +22,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.ws.xfire.MYECLIPSE_JAXWS_API"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.ws.xfire.MYECLIPSE_METRO_IMPL"/>
-	<classpathentry kind="lib" path="E:/workflow/service/json.jar"/>
+	<classpathentry kind="lib" path="json.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
