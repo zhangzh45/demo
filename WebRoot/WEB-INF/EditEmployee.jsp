@@ -71,6 +71,9 @@ text-transform:lowercase;}
 .clearfix{clear:both;}
 	.topleft{color:white;background-color:#222222;height:40px;margin-top:-18px;font-family:calibri;}
 	 </style>
+	 
+	 <script type="text/javascript" src="js/jquery-1.7.2.js"></script> 
+	 
   </head>
   
   <body>
@@ -96,28 +99,28 @@ text-transform:lowercase;}
 <!-- firstname /////////////////////////////////////////////////-->
 <div id='username' class='outerDiv'>
 <label for="username">名:</label> 
-<input type="text" name="firstname" /> 
+<input type="text" name="firstname" id="firstname"/> 
 <div class='message' id='usernameDiv'> Enter the name of the employee. </div>
 </div>
 <div class='clearfix'></div>
 <!-- lastname //////////////////////////////////////////////////////-->
 <div id='username' class='outerDiv'>
 <label for="username">姓:</label> 
-<input type="text" name="lastname" required /> 
+<input type="text" name="lastname" id="lastname" required /> 
 <div class='message' id='usernameDiv'> Enter the role of the employee. </div>
 </div>
 <div class='clearfix'></div>
 <!-- gender///////////////////////////////////////////// -->
 <div id='username' class='outerDiv'>
 <label for="username">性别:</label> 
-<input type="text" name="gend"  />
+<input type="text" name="gend" id="gend" />
 <div class='message' id='usernameDiv'> Enter the s of the employee. </div>
 </div>
 <div class='clearfix'></div>
 <!-- age ///////////////////////////////////////////-->
 <div id='email' class='outerDiv'>
 <label for="email">年龄:</label> 
-<input type="text" name="ag"  /> 
+<input type="text" name="ag"  id="ag"/> 
 <div class='message' id='emailDiv'> Enter the age of the employee(number only). </div>
 </div>
 <div class='clearfix'></div>
@@ -129,10 +132,10 @@ text-transform:lowercase;}
 </div>
 <div class='clearfix'></div>
 <!-- age ///////////////////////////////////////////-->
-<div id='email' class='outerDiv'>
-<label for="email">电话:</label> 
+<div id='phone' class='outerDiv'>
+<label for="phone">电话:</label> 
 <input type="text" name="phone"  /> 
-<div class='message' id='emailDiv'> Enter the phone number of the employee(number only). </div>
+<div class='message' id='phoneDiv'> Enter the phone number of the employee(number only). </div>
 </div>
 <div class='clearfix'></div>
 <div class="omg">
@@ -166,6 +169,24 @@ text-transform:lowercase;}
   if(tmp_arr[0] == "key") {
   id1 = tmp_arr[1];
   document.getElementById("id").value=id1;
+  
+  $.ajax({
+			    url: "findEmployee.action",
+			    type: "post",
+			    async: false,
+			    data: {"id":id1},
+			    dataType: "json",
+			    success: function(ajson){
+			    	var emp = JSON.parse(ajson);
+			    	document.getElementById("firstname").value=emp.firstname;
+			    	document.getElementById("lastname").value=emp.lastname;
+			    	document.getElementById("ag").value=emp.ag;
+			    	document.getElementById("gend").value=emp.gend;
+			    }
+			    
+		});
+  
+  
   break;
   }
   }

@@ -190,22 +190,29 @@ text-shadow:1px 1px 0 #FFFFFF;border-color:#DDDDDD #DDDDDD #CCCCCC;color: #333;
     </tbody>
 </table>
 	<br/>
-		  <s:form   action="findClient" namespace="/client" theme="simple">
+		  <s:form name="form"  action="findClient.action" method="post" namespace="/client" theme="simple">
+		  <input type="hidden" id="id" name="id" value=""/> 
+		  <input type="hidden" id="orgid" name="orgid" value=""/> 
    <table> 
    <tr>
-   <td><s:submit cssClass="submit1" value="添加" method="exploreAddClient"></s:submit></td>
+   <td><s:submit cssClass="submit1" value="添加" onclick="form.submit();"></s:submit></td>
     </tr>
     </table>
     </s:form>
     </div>
 </li>
+<li>
+<input type="radio" name="tabs" id="tab3" />
+	<label class="btn btn-primary" for="tab3">组织人员同步更新</label>
+	<div id="tab-content3" class="tab-content"></div>
+</li>
 </ul>
 	</div>
 	    <script type="text/javascript" >
          var code;
-         var treid =  '<%=session.getAttribute("orgid")%>';         
+         var treid =  <%=session.getAttribute("orgid")%>;
           var treeId;
-         if(treid!=0){treeId = treid;}
+         if(treid!=0 && treid!=null){treeId = treid;}
          else {treeId=0;}
           function hide(){
           var user =  '<%=session.getAttribute("user")%>';
@@ -221,6 +228,7 @@ text-shadow:1px 1px 0 #FFFFFF;border-color:#DDDDDD #DDDDDD #CCCCCC;color: #333;
         data: {"treeId":treeId},
         success: function(ajson) {
 				 apps = JSON.parse(ajson);
+				 document.getElementById("orgid").value = treeId;
 					$("#table_id").DataTable( {
 					destroy: true,
        data: apps,
@@ -440,6 +448,35 @@ window.location.href = "editPos.action?key="+id;
 function editAbiSpecSer(id){
 window.location.href = "editAbi.action?key="+id;
 }
+
+
+$(function(){
+	$("#tab3").click(function(){
+		$("#tab-content3").text("正在同步更新组织人员......");
+		$.ajax({
+			    url: "employeeSynchronize.action",
+			    //type: "post",
+			    type: "get",
+			    async: false,
+			    //data: {"posid":posid},
+			    dataType: "json",
+			    success: function(ajson){
+			    	var res = JSON.parse(ajson);
+			    	if(res.result == "success"){
+			    		$("#tab-content3").text("同步组织人员完成");
+			    	}
+			    	else{
+			    		$("#tab-content3").text("同步组织人员失败");
+			    	}
+			    },
+			    error: function(){
+			    	$("#tab-content3").text("同步组织人员失败");
+			    }
+			    
+		});
+	});
+});
+
 </script>
 </body>
 </html>

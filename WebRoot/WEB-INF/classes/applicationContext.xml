@@ -47,7 +47,9 @@
 				<value>com/bean/Organization.hbm.xml</value>
 				<value>com/bean/Position.hbm.xml</value>
 				<value>com/bean/Role.hbm.xml</value>
-				<value>com/bean/OrgEmpRelation.hbm.xml</value></list>
+				<value>com/bean/OrgEmpRelation.hbm.xml</value>
+				<value>com/bean/Employeecache.hbm.xml</value>
+				<value>com/bean/EmpAccountRelation.hbm.xml</value></list>
 		</property>
 	</bean>
 	<bean id="OrganResourceModifyAspect" class="com.aspect.OrganResourceModifyAspect" />
@@ -65,6 +67,20 @@
 	</bean>
 	
 	<!-- Employee配置 -->
+	<bean id="EmployeecacheDAO" class="com.dao.impl.EmployeecacheDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EmployeecacheService" class="com.service.impl.EmployeecacheServiceImpl">
+		<property name="cacheDAO">
+		<ref bean="EmployeecacheDAO"/>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- Employee配置 -->
 	<bean id="EmployeeDAO" class="com.dao.impl.EmployeeDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -78,6 +94,12 @@
 	<bean id="EmployeeAction" class="com.action.EmployeeAction" lazy-init="false" > 
 		<property name="employeeservice">
 		<ref bean="EmployeeService"/>
+		</property>
+		<property name="cacheService">
+		<ref bean="EmployeecacheService"/>
+		</property>
+		<property name="empaccrelService">
+		<ref bean="EmpAccountRelationService"/>
 		</property>
 		<property name="employeedao">
 		<ref bean="EmployeeDAO"/>
@@ -200,5 +222,16 @@
 			<ref bean="PositionService"/>
 		</property>
 	</bean>
-	
-</beans>
+	<bean id="EmpAccountRelationDAO"
+		class="com.dao.impl.EmpAccountRelationDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EmpAccountRelationService"
+		class="com.service.impl.EmpAccountRelationServiceImpl">
+		<property name="empAccountRelationdao">
+			<ref bean="EmpAccountRelationDAO" />
+		</property>
+	</bean>
+	</beans>

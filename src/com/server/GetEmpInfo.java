@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,13 +11,6 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.action.EmployeeAction;
-import com.dao.AbilityDAO;
-import com.dao.AbilityDAO;
-import com.dao.EmployeeDAO;
-import com.dao.OrganizationDAO;
-import com.dao.PositionDAO;
-import com.dao.RoleDAO;
 import com.bean.Ability;
 import com.bean.Employee;
 import com.bean.Organization;
@@ -29,7 +21,6 @@ import com.service.EmployeeService;
 import com.service.OrganizationService;
 import com.service.PositionService;
 import com.service.RoleService;
-import com.service.impl.EmployeeServiceImpl;
 
 
 public class GetEmpInfo {
@@ -82,12 +73,12 @@ public class GetEmpInfo {
 		this.organizationservice = organizationservice;
 	}
 
-	public String  test(){
+	/*public String  test(){
 	    String s=getEmployee(1);
 	    positionservice.findByEmpId(1);
 		getEmpfromrole(12);
 		return s;
-	}
+	}*/
 	
 	public static  String getEmpfromrole(int roleid){
 		try {

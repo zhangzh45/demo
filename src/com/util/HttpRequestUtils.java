@@ -1,10 +1,14 @@
 package com.util;
  
 import net.sf.json.JSONObject;
+
+import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
@@ -13,6 +17,7 @@ import org.slf4j.LoggerFactory;
  
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.nio.charset.Charset;
  
 public class HttpRequestUtils {
     private static Logger logger = LoggerFactory.getLogger(HttpRequestUtils.class);    //日志记录
@@ -99,6 +104,85 @@ public class HttpRequestUtils {
             }
         } catch (IOException e) {
             logger.error("get请求提交失败:" + url, e);
+        }
+        return jsonResult;
+    }
+    
+    /**
+     * 向rancher服务器发送请求
+     * @param url 服务器地址
+     * @param jsonParam 请求参数
+     * @param httpMethod 请求方法
+     * @param noNeedResponse 是否需要响应
+     * @return
+     */
+    public static String sendToRancher(String url, JSONObject jsonParam, String httpMethod, boolean noNeedResponse){
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpResponse result = null;
+        String jsonResult = null;    //请求返回结果
+        //String auth = "1477356FAC57627DB36C:KMPUFAwMxceHEp6ANvBCRG4EPhTgDK5xAXUfFbqL";  //rancher api keys
+        String auth = "A14BBCB29EB66268FD87:2iTtn7MTQgJPU87EkMXdXvfcpVmUuqJn7DWVcDCA";  //rancher api keys
+	    byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+	    String authHeader = "Basic " + new String(encodedAuth);
+	    System.out.println(authHeader);
+        try {
+        	if(httpMethod.equalsIgnoreCase("POST")){
+        		HttpPost method = new HttpPost(url);
+                method.setHeader("Authorization", authHeader);
+                if(null != jsonParam){
+                	//解决中文乱码问题
+                    StringEntity entity = new StringEntity(jsonParam.toString(), "utf-8");
+                  //  entity.setContentEncoding("UTF-8");
+                    entity.setContentType("application/json");
+                    method.setEntity(entity);
+                }
+                result = httpClient.execute(method);
+        	}
+        	else if(httpMethod.equalsIgnoreCase("PUT")){
+        		HttpPut method = new HttpPut(url);
+                method.setHeader("Authorization", authHeader);
+                if(null != jsonParam){
+                	//解决中文乱码问题
+                    StringEntity entity = new StringEntity(jsonParam.toString(), "utf-8");
+                  //  entity.setContentEncoding("UTF-8");
+                    entity.setContentType("application/json");
+                    method.setEntity(entity);
+                }
+                result = httpClient.execute(method);
+        	}
+        	else if(httpMethod.equalsIgnoreCase("GET")){   //发送get请求
+        		HttpGet method = new HttpGet(url);
+        		method.setHeader("Authorization", authHeader);
+                System.out.println("get:"+authHeader);
+                result = httpClient.execute(method);
+        	}
+        	else if(httpMethod.equalsIgnoreCase("DELETE")){   //发送DELETEget请求
+        		HttpDelete method = new HttpDelete(url);
+        		method.setHeader("Authorization", authHeader);
+                System.out.println("get:"+authHeader);
+                result = httpClient.execute(method);
+        	}
+            url = URLDecoder.decode(url, "UTF-8");
+            /**请求发送成功，并得到响应**/
+            String statusCode = result.getStatusLine().getStatusCode() + "";
+            if (statusCode.startsWith("2")) {
+            	System.out.println("********发送成功！********");
+                String str = "";
+                try {
+                    /**读取服务器返回过来的json字符串数据**/
+                	jsonResult = EntityUtils.toString(result.getEntity());
+                    if (noNeedResponse) {
+                        return null;
+                    }
+                } catch (Exception e) {
+                	System.out.println("请求提交失败:" + url);
+                }
+            }
+            else{
+            	System.out.println(result.getStatusLine().getStatusCode());
+            }
+        } catch (IOException e) {
+        	System.out.println("请求提交失败:" + url);
         }
         return jsonResult;
     }
