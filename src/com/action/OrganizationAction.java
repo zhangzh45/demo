@@ -1,4 +1,4 @@
-﻿package com.action;
+package com.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -93,7 +93,7 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 	
 	public String checkDepartName() throws Exception {
 		if(organizationService.isOrgExist(organization.getOrgName())){
-		this.info="*�����Ѵ��ڣ�";
+		this.info="*??????????";
 		}else{
 		this.info="";
 		}
@@ -176,7 +176,7 @@ public class OrganizationAction extends ActionSupport implements ModelDriven<Org
 			// TODO: handle exception
 			e.printStackTrace();
 			clearMessages();
-			addActionMessage("����ʧ�ܣ�");
+			addActionMessage("????????");
 			return ERROR;
 		}	
 	}
