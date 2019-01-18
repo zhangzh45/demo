@@ -3,6 +3,7 @@ package com.aspect;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.util.ConstantUtil;
 import net.sf.json.JSONObject;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -27,7 +28,7 @@ import com.util.HttpRequestUtils;
  */
 @Aspect
 public class OrganResourceModifyAspect {
-		private static final String url = "http://localhost:3000/cache/modifyResource";
+		private static final String url = ConstantUtil.getModifyResourceUrl();
 		private JSONObject jsonObj = new JSONObject();
 
 	   // 添加

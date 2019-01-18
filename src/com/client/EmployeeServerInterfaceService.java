@@ -1,5 +1,7 @@
 package com.client;
 
+import com.util.ConstantUtil;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
@@ -23,7 +25,7 @@ import javax.xml.ws.WebServiceClient;
  * </p>
  * 
  */
-@WebServiceClient(name = "EmployeeServerInterfaceService", targetNamespace = "http://server.com/", wsdlLocation = "http://127.0.0.1:8080/demo/EmployeeServerInterfacePort?wsdl")
+@WebServiceClient(name = "EmployeeServerInterfaceService", targetNamespace = "http://server.com/", wsdlLocation = "http://192.168.0.93:8020/demo/EmployeeServerInterfacePort?wsdl")
 public class EmployeeServerInterfaceService extends Service {
 
 	private final static URL EMPLOYEESERVERINTERFACESERVICE_WSDL_LOCATION;
@@ -38,9 +40,9 @@ public class EmployeeServerInterfaceService extends Service {
 			baseUrl = com.client.EmployeeServerInterfaceService.class
 					.getResource(".");
 			url = new URL(baseUrl,
-					"http://127.0.0.1:8080/demo/EmployeeServerInterfacePort?wsdl");
+					ConstantUtil.getWsdlLocation());
 		} catch (MalformedURLException e) {
-			logger.warning("Failed to create URL for the wsdl Location: 'http://127.0.0.1:8080/demo/EmployeeServerInterfacePort?wsdl', retrying as a local file");
+			logger.warning("Failed to create URL for the wsdl Location: 'http://192.168.0.93:8020/demo/EmployeeServerInterfacePort?wsdl', retrying as a local file");
 			logger.warning(e.getMessage());
 		}
 		EMPLOYEESERVERINTERFACESERVICE_WSDL_LOCATION = url;
